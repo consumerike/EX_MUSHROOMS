@@ -9,6 +9,7 @@ app.factory("MushroomFarm", function($http, FBCreds) {
 			$http.get(`${FBCreds.URL}/mushrooms.json`)
 			.success((mushroomObject) => {
 				let mushroomObject = mushroomCollection;
+				console.log({toadcollection: mushroomCollection});
 				Object.keys(mushroomCollection).forEach((element) => {
 					mushroomCollection[element].id = element;
 					farm.push(mushroomCollection[element]);
